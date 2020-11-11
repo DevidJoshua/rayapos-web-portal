@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^index\.php$ index.php [L]
+RewriteRule ^index\.html$ index.php [L]
+RewriteRule ^home\.php$ index.php [L]
+RewriteRule ^home\.html$ index.php [L]
+RewriteRule ^home$ index.php [L]
+RewriteRule ^index$ index.php [L]
+RewriteRule ^$ index.php [L]
+
+RewriteRule ^page/([0-9]+)$ index.php?hal=$1 [L]
+RewriteRule ^index\.php/page/([0-9]+)$ index.php?hal=$1 [L]
+
+RewriteRule ^home/main-category/nasional$ index.php?module=front_main_category&main_kategori=nasional [L]
+RewriteRule ^home/main-category/internasional$ index.php?module=front_main_category&main_kategori=internasional [L]
+RewriteRule ^home/main-category/gaya-hidup$ index.php?module=front_main_category&main_kategori=gaya-hidup [L]
+RewriteRule ^home/main-category/hiburan$ index.php?module=front_main_category&main_kategori=hiburan [L]
+RewriteRule ^home/main-category/teknologi$ index.php?module=front_main_category&main_kategori=teknologi [L]
+RewriteRule ^home/main-category/olahraga$ index.php?module=front_main_category&main_kategori=olahraga [L]
+RewriteRule ^home/main-category/indonesia$ index.php?module=front_main_category&main_kategori=indonesia [L]
+
+
+RewriteRule ^home/main-category/([a-zA-Z0-9-]*)/sub-category/([a-zA-Z0-9-]*)$ index.php?module=front_sub_category&main_kategori=$1&seo_subkategori=$2 [L]
+
+
+
+RewriteRule ^home/main-category/([a-zA-Z0-9-]*)/sub-category/([a-zA-Z0-9-]*)/([0-9]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9-]*)$ index.php?module=news_detail&main_kategori=$1&kategori=$2&tahun=$3&bulan=$4&hari=$5&seo=$6 [QSA]
+
+RewriteRule ^home/search/([a-zA-Z0-9-+]*)$ index.php?module=front_search&query=$1 [L]
+
+
+
+
+
+Options All -Indexes
+</IfModule>
